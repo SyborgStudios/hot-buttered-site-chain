@@ -1,0 +1,33 @@
+#hero {
+  background-color: $color-grey--lite;
+  background-image: url('../assets/img/back--lg.jpg');
+  background-size: cover;
+  background-position: right;
+  // background-attachment: fixed;
+  min-height: 80vh;
+  .content {
+    padding-top: $spacer*4;
+    max-width: 600px;
+  }
+  h1 {
+    margin-top: 10vh;
+  }
+  p {
+    font-size: $spacer*2.25;
+    line-height: $spacer*3;
+    margin: $spacer*2 0 $spacer*4;
+  }
+  @include respond-up-to('md') {
+    overflow: hidden;
+    padding-bottom: 2vh;
+    h1 {
+      margin-top: 2vh;
+    }
+    .button.cta {
+      padding-left: $spacer*2;
+      padding-right: $spacer*2;
+    }
+    background-position: right;
+    background-image: url('../assets/img/back--md.jpg');
+  }
+}

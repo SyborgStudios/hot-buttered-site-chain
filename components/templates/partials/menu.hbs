@@ -1,11 +1,8 @@
 <nav id="menu" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
   <ul>
-    {{#each category }}
-      <li>
-        <a href="/{{path}}" class="{{{isActive @root.path path}}}" itemprop="url">
-          <span itemprop="name">{{ name }}</span>
-        </a>
-      </li>
-    {{/each}}
+    <li><a href="#solutions">Lösungen</a></li>
+    <li><a href="#about">Über Uns</a></li>
+    <li><a href="#benefits">Vorteile</a></li>
+    <li><a href="mailto:{{mail}}" class="button">jetzt beraten lassen</a></li>
   </ul>
 </nav>

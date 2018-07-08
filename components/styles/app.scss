@@ -1,47 +1,306 @@
-$spacer: 28px;
+$spacer: 8px;
 
 
-$color-radish: #F63A5B;
-$color-blue: #3385FF;
-$color-bluest: #0030DD;
-$color-bluer: #0B24FB;
-$color-sun: #FEE279;
-$color-yellow: #feda31;
-$color-mint: #9FD6AE;
-$color-green: #1EBC52;
-$color-rose: #EBC7DB;
-$color-black: #1F1F21;
-$color-white: #FFE;
 
+$color-blue: #104CB6;
+$color-orange: #FF8E00;
+$color-orange--lite: #FFEBC3;
+$color-aubergine: #340A5E;
+$color-white: #FFF;
 
-$color-lobster: #EFEDE2;
+$color-grey: #695F74;
+$color-grey--med: #ABA5B1;
+$color-grey--lite: #EAEFEB;
+$color-back: $color-white;
 
-$color-back: #D3D3D3;
-// $color-back: $color-lobster;
+$color-type: $color-aubergine;
 
-$color-type: $color-black;
 $color-type--lite: lighten($color-type, 35);
 
 
 @import "screen-reader";
 @import "fonts";
-
+@import "vendor/normalize";
+@import "modules/mixins";
 
 html, body {
   margin: 0;
-  line-height: $spacer;
+  line-height: $spacer*3;
   font-family: haus, sans-serif;
+  font-family: 'Larsseit';
   font-kerning: normal;
   font-feature-settings:"kern" 1;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 16px;
   color: $color-type;
+}
+
+h1 {
+  font-family: 'Larsseit Bold';
+  font-weight: normal;
+  font-size: $spacer*6;
+  line-height: $spacer*7;
+  margin: 0;
+}
+h2 {
+  font-family: 'Larsseit Medium';
+  font-weight: normal;
+  text-align: center;
+  font-size: $spacer*5;
+  line-height: $spacer*5;
+  margin: $spacer*6 $spacer*4 $spacer;
+}
+h3 {
+  font-family: 'Larsseit';
+  font-weight: normal;
+  text-align: center;
+  color: $color-orange;
+  font-size: $spacer*3;
+  line-height: $spacer*3;
+  margin: 0 $spacer*4 $spacer;
+  strong {
+    color: $color-type;
+  }
+}
+h3 + p {
+  margin: 0;
+}
+.content h3 {
+  margin: 0 0 $spacer;
+}
+article {
+  h3 {
+    text-align: left;
+    margin: 0 0 $spacer;
+  }
+}
+
+h4 {
+  font-family: 'Larsseit Bold';
+  font-weight: normal;
+  // color: $color-orange;
+  color: $color-type;
+  font-size: $spacer*2;
+  margin: 0;
+  text-transform: uppercase;
+}
+p {
+  margin: $spacer*3 0;
 }
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
+a {
+  text-decoration: none;
+  color: $color-type;
+}
+strong {
+  font-family: 'Larsseit Bold';
+  font-weight: normal;
+}
+
+
+
+.button {
+  font-family: 'Larsseit Bold';
+  background-color: $color-orange;
+  color: $color-white;
+  padding: $spacer*1.1 $spacer*2 $spacer*1.5;
+  border-radius: 4px;
+  display: inline-block;
+}
+.button.cta {
+  font-size: $spacer*2.25;
+  padding: $spacer*1.5 $spacer*3 $spacer*2;
+  background-color: $color-blue;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.15);
+}
+.center {
+  width: 100%;
+  max-width: 1083px;
+  position: relative;
+  margin: 0 auto;
+}
+.center .content {
+  padding: 0 $spacer*4;
+  @include respond-up-to('sm') {
+    padding: 0 $spacer*2;
+  }
+}
+
+.grid-⅓,
+.grid-⅔ {
+  h2 {
+    text-align: left;
+    margin: 0;
+  }
+}
+.grid-⅓ {
+  width: 32%;
+  min-width: 320px;
+}
+.grid-⅔ {
+  width: 63%;
+}
+@include respond-up-to('md') {
+  div[class^="grid-"] {
+    width: 100%;
+    min-width: 100%;
+    overflow: hidden;
+  }
+}
+
+
+#solutions {
+  padding-bottom: $spacer*10 ;
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  article {
+    width: 38%;
+    min-width: 280px;
+    margin: $spacer*4 0 0 0;
+    padding: 0 $spacer*6;
+  }
+  @include respond-up-to('md') {
+    article {
+      width: 100%;
+      padding: 0 $spacer*2;
+    }
+  }
+}
+
+#about {
+  background-color: $color-grey--lite;
+  padding-top: $spacer*2;
+  padding-bottom: $spacer*6;
+  background-image: url('../assets/img/hofi-back.jpg');
+  background-size: cover;
+  // background-position: left;
+  // background-attachment: fixed;
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: $spacer*4 0;
+    font-size: $spacer*2.25;
+    line-height: $spacer*3;
+    text-shadow: 0px 2px 6px rgba(234,239,235,0.5);
+    h2 {
+      font-size: $spacer*5;
+      line-height: $spacer*5;
+      margin-top: $spacer*3;
+      text-align: right;
+    }
+  }
+  @include respond-up-to('md') {
+    .content h2 {
+      text-align: center;
+    }
+  }
+}
+
+#benefits {
+  padding-bottom: $spacer*10 ;
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  article {
+    width: 30%;
+    min-width: 240px;
+    margin: $spacer*4 0 0 0;
+  }
+  @include respond-up-to('md') {
+    ul {
+      list-style-position: inside;
+    }
+  }
+  ul {
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+  li {
+    margin: 0 0 $spacer*2;
+  }
+}
+
+#tech-trust {
+  background-color: $color-grey--lite;
+  background-image: url('../assets/img/tech-back.jpg');
+  background-size: cover;
+  // background-position: left;
+  // background-attachment: fixed;
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: $spacer*4 0;
+    color: $color-orange--lite;
+    font-size: $spacer*2.25;
+    line-height: $spacer*3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    h2 {
+      line-height: $spacer*5;
+      margin-top: $spacer*3;
+      margin-top: $spacer*3;
+      text-align: right;
+      color: $color-orange;
+    }
+  }
+  @include respond-up-to('md') {
+    .content h2 {
+      text-align: center;
+    }
+  }
+}
+
+.cta-reminder {
+  background: linear-gradient(to bottom, $color-grey--lite, $color-white);
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: $spacer*2 $spacer*4 $spacer*6;
+  }
+  h3 {
+    font-family: 'Larsseit Bold';
+    text-align: left;
+    margin-top: $spacer*4;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    margin-top: $spacer*4;
+  }
+  @include respond-up-to('md') {
+    .content {
+      display: block;
+      padding-left: $spacer*2;
+      padding-right: $spacer*2;
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+    .button.cta {
+      width: 70%;
+
+    }
+  }
+}
+
+
 
 @import "modules/masthead";
 @import "modules/menu";
+@import "modules/hero";
+@import "modules/footer";

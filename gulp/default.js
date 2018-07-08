@@ -26,10 +26,10 @@ gulp.task('build', function(callback) {
     'minifyCSS',
     'minifyJS',
     'minifySVG',
-    'minifyImages',
-    'criticalCSS',
-    'publish',
-    'slack',
+    // 'minifyImages',
+    // 'criticalCSS',
+    // 'publish',
+    // 'slack',
     callback);
 });
 

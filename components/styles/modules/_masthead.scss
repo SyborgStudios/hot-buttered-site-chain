@@ -1,28 +1,36 @@
 #masthead {
-  margin-bottom: $spacer*8;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
+  .center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: $spacer*9;
+  }
   .logo {
-    a {
-      text-decoration: none;
-      font-family: display;
-      font-weight: 300;
-      font-size: 1.8em;
-      text-transform: uppercase;
-      line-height: $spacer;
-      color: $color-type;
-    }
+    padding-left: $spacer*4;
+    width: 260px;
     img {
-      position: absolute;
-      width: 120px;
-      top: 5px;
-      left: 10px;
-    }
-    strong {
-      padding-left: 48px;
+      margin-top: $spacer;
+      width: 260px;
     }
   }
-
+  @include respond-up-to('lg') {
+    .button {display: none;}
+  }
+  @include respond-up-to('md') {
+    #menu li {margin: 0 0 0 $spacer;}
+  }
+  @include respond-up-to('sm') {
+    .logo {
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+    }
+    #menu {
+      padding:0;
+      margin: 0 auto;
+      li {margin: 0 0 0 $spacer*2;}
+    }
+    height: $spacer*12;
+  }
 }

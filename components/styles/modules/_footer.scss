@@ -1,0 +1,17 @@
+footer {
+  border-top: 2px solid $color-grey--lite;
+  padding: $spacer*4 0;
+  color: $color-grey;
+  font-size: $spacer*1.6;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: top;
+    padding: $spacer*2 $spacer*4 $spacer*6;
+  }
+  img {
+    width: 56px;
+    opacity: 0.5;
+  }
+}

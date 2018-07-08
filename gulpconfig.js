@@ -13,7 +13,7 @@ var src               = './components',
     styles            = src + '/styles';
 
 // build repo outside of this project…
-var build             = '../MY-STATIC-SITE',
+var build             = '../pico_b2b',
     build_assets      = build +  '/assets';
 
 // all gulp task configurations & settings will be found here
@@ -34,19 +34,19 @@ module.exports = {
     clean: false,
     metadata: {
       version: "0.0.0",
-      title: "STATIC-SITE",
-      name: "STATIC-SITE",
-      shortname: "STATIC-SITE",
+      title: "Pico: Moderne Software für Lieferbetriebe",
+      name: "Pico Liefersystem",
+      shortname: "Pico",
       // private: true,
-      description: "description!",
-      author: "Daniel Kurtius",
+      description: "Pico hilft Lieferbetrieben frischer Lebensmittel mit einer ganzheitlichen IT-Lösung ihr Geschäft einfacher und erfolgreicher zu betreiben.",
+      author: "Pico Liefersystem",
       site: {
-        url: "https://STATIC-SITE/",
+        url: "https://www.pico-liefersystem.de/",
         lang: "de",
         locale: "de_DE",
         analyticsID: "UA-XXXXXXX",
         googleVerification: "XXXXXXX",
-        "meta-canonical": "https://oSTATIC-SITE/"
+        "meta-canonical": "https://www.pico-liefersystem.de/"
       }
     },
     config: {
@@ -89,7 +89,7 @@ module.exports = {
         rename: true
       },
       "metalsmith-sitemap": {                     // https://github.com/ExtraHop/metalsmith-sitemap
-        hostname: "http://STATIC-SITE/",
+        hostname: "https://www.pico-liefersystem.de/",
       }
     }
   },
@@ -150,7 +150,7 @@ module.exports = {
     }
   },
   minifySVG: {                                    // https://www.npmjs.com/package/gulp-svgo
-    src: build + "/img/**",
-    dest: build + "/img",
+    src: build_assets + "/img/**/*.svg",
+    dest: build_assets + "/img",
   },
 };

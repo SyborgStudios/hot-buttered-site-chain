@@ -1,9 +1,11 @@
 #menu {
+  padding-right: $spacer*4;
+  font-family: 'Larsseit Bold';
   ul {
     display: flex;
   }
   li {
-    padding: 0 $spacer*0.25;
+    margin: 0 0 0 $spacer*4;
     &:first-child {
       padding-left: 0;
     }
@@ -11,18 +13,9 @@
       padding-right: 0;
     }
   }
-  a {
-    color: $color-type;
-
-  }
-
-
   .active {
-    font-weight: 500;
-    color: $color-type;
   }
   a:hover,
   .active:hover {
-    color: $color-bluest;
   }
 }

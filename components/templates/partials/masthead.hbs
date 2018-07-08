@@ -1,12 +1,14 @@
 <!--  masthead w/ schema.org stuff ala ALA & Zeldman
       http://alistapart.com/  -->
 <header id="masthead" role="banner">
-  <div class="logo" itemtype="http://schema.org/Organization" itemprop="publisher" itemscope="">
-    <a href="{{site.url}}" title="{{name}} home page" tabindex="-1" itemprop="url">
-    <strong>MY-STATIC-SITE-NAME</strong>
-    </a>
-    <span class="screen-reader" itemprop="name">{{name}}</span>
-  </div>
+  <div class="center">
+    <div class="logo" itemtype="http://schema.org/Organization" itemprop="publisher" itemscope="">
+      <a href="{{site.url}}" title="{{name}} home page" tabindex="-1" itemprop="url">
+      <img src="assets/img/pico-logo.png">
+      </a>
+      <span class="screen-reader" itemprop="name">{{name}}</span>
+    </div>
 
-  {{> menu }}
+    {{>menu}}
+  </div>
 </header>
