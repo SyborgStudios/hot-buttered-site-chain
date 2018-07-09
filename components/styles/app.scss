@@ -202,7 +202,7 @@ strong {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: $spacer*4 0;
+    padding: $spacer*4 $spacer*2;
     font-size: $spacer*2.25;
     line-height: $spacer*3;
     text-shadow: 0px 2px 6px rgba(234,239,235,0.5);
@@ -256,7 +256,7 @@ strong {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: $spacer*4 0;
+    padding: $spacer*4 $spacer*2;
     color: $color-orange--lite;
     font-size: $spacer*2.25;
     line-height: $spacer*3;
