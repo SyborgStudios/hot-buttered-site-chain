@@ -4,7 +4,7 @@ meta-title: "Pico: Moderne Software für Lieferbetriebe"
 # meta-title should be around 50 chars. -> https://moz.com/learn/seo/title-tag
 meta-description: "Pico hilft Lieferbetrieben frischer Lebensmittel mit einer ganzheitlichen IT-Lösung ihr Geschäft einfacher und erfolgreicher zu betreiben."
 # meta-description should be around 150 chars. -> https://moz.com/learn/seo/meta-description
-mail: "mailto:a@a.com?subject=this is subject body&body=this is message body"
+mail: "mailto:y.monien@pico-liefersystem.de?subject=Anfrage"
 url: /
 
 ---
