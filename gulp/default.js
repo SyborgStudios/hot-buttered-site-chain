@@ -19,7 +19,8 @@ gulp.task('build', function(callback) {
       'metalsmith',
       'sass',
       'scripts',
-      'assets'
+      'assets',
+      'media'
     ],
     'minifyHTML',
     'purifyCSS',
@@ -41,6 +42,7 @@ gulp.task('build:dev', function(callback) {
     'sass',
     'scripts',
     'assets',
+    'media'    
   ],
   // 'minifySVG',
   [

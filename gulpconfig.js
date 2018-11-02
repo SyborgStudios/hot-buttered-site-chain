@@ -10,11 +10,13 @@ var src               = './components',
     templates         = src + '/templates',
     assets            = src + '/assets',
     scripts           = src + '/scripts',
-    styles            = src + '/styles';
+    styles            = src + '/styles',
+    media            = src + '/media';
 
 // build repo outside of this project…
 var build             = '../pico_b2b',
-    build_assets      = build +  '/assets';
+    build_assets      = build +  '/assets',
+    build_media      = build +  '/media';
 
 // all gulp task configurations & settings will be found here
 module.exports = {
@@ -33,8 +35,8 @@ module.exports = {
     dest: build,
     clean: false,
     metadata: {
-      version: "0.0.0",
-      title: "Pico: Moderne Software für Lieferbetriebe",
+      version: "1.0.0",
+      title: "Pico: Moderne Software für Lieferbetriebe",
       name: "Pico Liefersystem",
       shortname: "Pico",
       // private: true,
@@ -89,7 +91,7 @@ module.exports = {
         rename: true
       },
       "metalsmith-sitemap": {                     // https://github.com/ExtraHop/metalsmith-sitemap
-        hostname: "https://www.pico-liefersystem.de/",
+        hostname: "https://pico-liefersystem.de/",
       }
     }
   },
@@ -115,6 +117,16 @@ module.exports = {
       icons: build_assets + "/"
     }
   },
+  media: {                                       // just moving & watching
+    src: {
+      root: src + "/media/**",
+      apps: src + "/media/apps/**"
+    },
+    dest: {
+      root: build_media + "/",
+      apps: build_media + "/apps"
+    }
+  },  
   minifyHTML: {                                   // https://www.npmjs.com/package/gulp-htmlmin
     src:  build + '/**/*.html',
     dest: build,
